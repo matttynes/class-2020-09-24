@@ -1,0 +1,18 @@
+---
+title: "Milestone 2"
+author: "Matt Tynes"
+date: "9/25/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# last year, Westley Cook did a final project called Payroll and Performance in Professional Sports. In which he created an app that displayed contracts over time in different sports. This included payrool treds, payroll and performance, and pay rool by team for the four major mens professional sports teams. Key take aways from the graphs were provided for each league. 
+
+# Next, Scott Mahon's final project: (the) Effect of MLB Statistics on Team Winning Likelihood, looked at how different MLB statistics, such as runs, batting average, etc. impact a team’s total number of wins at the end of the season. This app/website had graphicing for every baseball statistic, explanatiions for how that data is analyzed, and its correlationb to winning baseball games. 
+
+
+
+```
+
+
