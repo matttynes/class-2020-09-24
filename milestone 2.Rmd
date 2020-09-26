@@ -4,6 +4,7 @@ author: "Matt Tynes"
 date: "9/25/2020"
 output: html_document
 ---
+https://github.com/matttynes/class-2020-09-24.git
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
