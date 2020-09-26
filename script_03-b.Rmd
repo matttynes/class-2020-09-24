@@ -47,12 +47,48 @@ sep_new <-
 ### Scene 1
 
 **Prompt:** Which classes had the biggest increases and decreases in undergraduate enrollments between September 1 and September 22? Obviously, you will need to join the two datasets which I have created for you above.
+```{r}
+the_data<- inner_join(sep_old, sep_new, by= c( "name", "id", "title", "department"), 
+suffix = c("_old", "_new")) %>% 
+mutate(difference = (u_grad_new - u_grad_old)) %>% 
+arrange(desc(difference)) %>% 
+slice_head(n = 5)
 
+the_data
+
+  
+```
 a) Make a table using **gt** which shows the five courses with the biggest increase. Use the [How to make a table](https://davidkane9.github.io/PPBDS/tools.html#how-to-make-a-table) section of *The Primer*.
+```{r}
+top_adds<- inner_join(sep_old, sep_new, by= c( "name", "id", "title", "department"), 
+suffix = c("_old", "_new")) %>% 
+mutate(difference = (u_grad_new - u_grad_old)) %>% 
+arrange(difference)%>% 
+slice_head(n = 5)
 
+top_adds
+
+  
+```
 b) Make a table using **gt** which shows the five courses with the biggest decrease.
+```{r}
+top_drops<- inner_join(sep_old, sep_new, by= c( "name", "id", "title", "department"), 
+suffix = c("_old", "_new")) %>% 
+mutate(difference = (u_grad_new - u_grad_old)) %>% 
+arrange(desc(difference)) %>% 
+slice_head(n = 5)
 
+top_drops
+
+  
+```
 c) Make a nice looking graphic which shows these 10 courses.
+```{r}
+combined <- full_join (top_adds, top_drops)
+
+ggplot(combined, aes(reorder(name))
+```
+
 
 d) Write down some thoughts about what might explain these increases and decreases. Or is it all just random? How would we know?
 
